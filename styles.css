@@ -1,0 +1,37 @@
+:root {
+    --font-heading: 'Merriweather', serif; /* Importar en HTML */
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Escala Tipográfica (Mobile a Desktop) */
+    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --font-size-lg:   clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);    /* H3 */
+    --font-size-xl:   clamp(1.5rem, 1.35rem + 0.75vw, 2rem);      /* H2 */
+    --font-size-2xl:  clamp(2rem, 1.8rem + 1vw, 2.5rem);          /* H1 */
+
+    /* Espaciado Fluido (Ritmo Vertical) */
+    --space-sm: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+    --space-md: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    --space-lg: clamp(2rem, 1.8rem + 1vw, 3rem);
+
+    /* 2. Paleta de Colores */
+    --color-primary: #D97706;   /* Naranja quemado (apetitoso) */
+    --color-secondary: #10B981; /* Verde fresco (ingredientes) */
+    --color-text-main: #1F2937; /* Gris oscuro (lectura) */
+    --bg-body: #FFFBEB;         /* Crema suave (no blanco puro) */
+    --bg-card: #FFFFFF;
+}
+
+/* Ritmo vertical base para textos */
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-main);
+    background-color: var(--bg-body);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
