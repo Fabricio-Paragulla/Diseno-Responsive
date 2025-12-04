@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog_responsive</title>
+  <link rel="stylesheet" href="../Practica 2 tema 2/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Blog de recetas</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Tipos de recetas</a></li>
+        <li><a href="#">Recetas saludables</a></li>
+        <li><a href="#">Recetas por estaciones</a></li>
+        <li><a href="#">Sobre nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="grid-recetas">
+
+      <!-- Receta 1 -->
+      <article>
+        <figure>
+          <img src="img/ensalada.jpeg" alt="Ensalada mediterránea fresca" class="img-receta">
+          <figcaption>Receta de Ensalada Mediterránea</figcaption>
+        </figure>
+        <p>Una deliciosa ensalada fresca con ingredientes mediterráneos.</p>
+        <h3>Ingredientes:</h3>
+        <ul>
+          <li>Tomates cherry</li>
+          <li>Pepino</li>
+          <li>Aceitunas negras</li>
+          <li>Queso feta</li>
+          <li>Aceite de oliva</li>
+          <li>Orégano</li>
+        </ul>
+        <h3>Instrucciones:</h3>
+        <ol>
+          <li>Cortar los tomates y el pepino en trozos pequeños.</li>
+          <li>Mezclar todos los ingredientes en un bol grande.</li>
+          <li>Añadir aceite de oliva y orégano al gusto.</li>
+          <li>Servir fresca y disfrutar.</li>
+        </ol>
+      </article>
+      <article>
+        <h2>Tabla de valores nutricionales</h2>
+        <div class="tabla-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Ingrediente</th>
+                <th>Calorías</th>
+                <th>Proteínas</th>
+                <th>Grasas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Ingrediente">Tomates cherry</td>
+                <td data-label="Calorías">18 kcal</td>
+                <td data-label="Proteínas">0.9 g</td>
+                <td data-label="Grasas">0.2 g</td>
+              </tr>
+              <tr>
+                <td data-label="Ingrediente">Pepino</td>
+                <td data-label="Calorías">16 kcal</td>
+                <td data-label="Proteínas">0.7 g</td>
+                <td data-label="Grasas">0.1 g</td>
+              </tr>
+              <tr>
+                <td data-label="Ingrediente">Queso feta</td>
+                <td data-label="Calorías">264 kcal</td>
+                <td data-label="Proteínas">14 g</td>
+                <td data-label="Grasas">21 g</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <article>
+        <figure>
+          <img src="img/sopa.jpg" alt="Sopa de picadillo andaluza" class="img-receta">
+          <figcaption>Sopa de picadillo Andaluza</figcaption>
+        </figure>
+        <p>Una sopa tradicional para los días fríos.</p>
+        <h3>Ingredientes:</h3>
+        <p>Para 4 personas</p>
+        <ul>
+          <li>1’5 litros de caldo de pollo</li>
+          <li>100 g de fideos “cabello de ángel”</li>
+          <li>75 g de taquitos de jamón</li>
+          <li>2 huevos cocidos</li>
+          <li>2 filetes de pechuga de pollo</li>
+          <li>Hojas de hierbabuena</li>
+          <li>Sal</li>
+          <li>Aceite de oliva virgen extra</li>
+        </ul>
+        <h3>Instrucciones:</h3>
+        <ol>
+          <li>Cocinar las pechugas de pollo a la plancha con un poco de sal.</li>
+          <li>Hervir el caldo de pollo y añadir los fideos.</li>
+          <li>Picar las pechugas y los huevos cocidos.</li>
+          <li>Agregar pollo, huevo y jamón al caldo y hervir unos minutos.</li>
+          <li>Servir caliente y decorar con hierbabuena.</li>
+        </ol>
+      </article>
+      <article>
+        <figure>
+          <img src="img/mousse.jpg" alt="Mousse de chocolate en vasitos" class="img-receta">
+          <figcaption>Mousse de chocolate</figcaption>
+        </figure>
+        <p>Receta que gustará a pequeños y mayores.</p>
+        <h3>Ingredientes:</h3>
+        <p>Para 6 vasitos</p>
+        <ul>
+          <li>300 ml de nata para montar 35% M.G.</li>
+          <li>100 g de chocolate negro para fundir</li>
+          <li>50 g de azúcar</li>
+          <li>Fideos de chocolate o chocolate rallado para decorar</li>
+        </ul>
+        <h3>Instrucciones:</h3>
+        <ol>
+          <li>Picar el chocolate y colocarlo en un bol.</li>
+          <li>Calentar la nata con el azúcar y verter sobre el chocolate.</li>
+          <li>Mezclar bien y enfriar en la nevera.</li>
+          <li>Montar con varillas hasta obtener textura de mousse.</li>
+          <li>Servir en vasitos y decorar con chocolate rallado.</li>
+        </ol>
+      </article>
+    </section>
+    <div class="paginacion-container">
+      <nav class="paginacion" aria-label="Navegación de páginas">
+        <!-- Botón Anterior -->
+        <a href="#" class="pag-btn prev" aria-label="Anterior">
+          &laquo; Prev
+        </a>
+
+        <!-- Números de página -->
+        <a href="#" class="pag-numero activo">1</a>
+        <a href="#" class="pag-numero">2</a>
+        <a href="#" class="pag-numero">3</a>
+        <span class="pag-puntos">...</span>
+        <a href="#" class="pag-numero">12</a>
+
+        <!-- Botón Siguiente -->
+        <a href="#" class="pag-btn next" aria-label="Siguiente">
+          Next &raquo;
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Blog de cocina</h3>
+        <p>Recetas caseras explicadas paso a paso para amantes de la buena comida y el desarrollo web.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Política de Cookies</a></li>
+          <li><a href="#">Aviso Legal</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <p>¿Tienes dudas?</p>
+        <p class="email-contact">ejemplo@example.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Todos los derechos reservados ©2025 Sabor & Código</p>
+    </div>
+  </footer>
+</body>
+
+</html>
