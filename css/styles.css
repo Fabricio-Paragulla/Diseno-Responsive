@@ -1,0 +1,494 @@
+:root {
+    --font-heading: 'Merriweather', serif; /* Importar en HTML */
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Escala Tipográfica (Mobile a Desktop) */
+    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --font-size-lg:   clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);    /* H3 */
+    --font-size-xl:   clamp(1.5rem, 1.35rem + 0.75vw, 2rem);      /* H2 */
+    --font-size-2xl:  clamp(2rem, 1.8rem + 1vw, 2.5rem);          /* H1 */
+
+    /* Espaciado Fluido (Ritmo Vertical) */
+    --space-sm: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+    --space-md: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    --space-lg: clamp(2rem, 1.8rem + 1vw, 3rem);
+
+    /* 2. Paleta de Colores */
+    --color-primary: #D97706;   /* Naranja quemado (apetitoso) */
+    --color-secondary: #10B981; /* Verde fresco (ingredientes) */
+    --color-text-main: #1F2937; /* Gris oscuro (lectura) */
+    --bg-body: #FFFBEB;         /* Crema suave (no blanco puro) */
+    --bg-card: #FFFFFF;
+}
+
+/* Ritmo vertical base para textos */
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-main);
+    background-color: var(--bg-body);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
+
+.site-header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Menú principal centrado */
+.site-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex; 
+  gap: 1rem;
+}
+
+.grid-recetas{
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;  
+    margin: 0 auto;
+}
+
+/* Parámetros para que la tabla sea responsive */
+.tabla-responsive {
+  width: 100%;
+}
+.tabla-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tabla-responsive th,
+.tabla-responsive td {
+  border: 1px solid #ddd;
+  padding: 0.75rem; 
+  text-align: left;
+}
+.tabla-responsive th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+/* Estilos para imágenes responsive */
+.img-receta {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Diseño opcional para las recetas */
+.grid-recetas article {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Diseño para móviles: TODO en una sola columna */
+@media (max-width: 640px) {
+  .grid-recetas {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  .site-header nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  /* Tabla en formato columna en móvil */
+  .tabla-responsive table,
+  .tabla-responsive thead,
+  .tabla-responsive tbody,
+  .tabla-responsive th,
+  .tabla-responsive td,
+  .tabla-responsive tr {
+    display: block;
+    width: 100%;
+  }
+
+  .tabla-responsive thead {
+    display: none; 
+  }
+
+  .tabla-responsive td {
+    border: none;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 10rem; 
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .tabla-responsive td::before {
+    content: attr(data-label); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7rem;
+    padding: 0.75rem;
+    font-weight: bold;
+    white-space: normal; 
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+    height: 100%;
+    display: inline-block; 
+    line-height: 1.2;
+  }
+}
+
+/*Diseño para tablets */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .grid-recetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*Diseño para PC */
+@media (min-width: 1024px) {
+  .grid-recetas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*Diseño del footer */
+.site-footer {
+    background-color: #2c3e50; 
+    color: #ecf0f1; 
+    padding-top: 3rem;
+    margin-top: 4rem; 
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+}
+
+.footer-column h3 {
+    color: #e67e22; 
+    font-family: 'Georgia', serif;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+}
+
+.footer-column p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #bdc3c7; 
+}
+
+/* Lista de enlaces legales */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e67e22; 
+    padding-left: 5px; 
+}
+
+.email-contact {
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.footer-bottom {
+    background-color: #233140; 
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    border-top: 1px solid #34495e;
+}
+
+@media (max-width: 640px) {
+    .site-footer {
+        text-align: center; 
+    }
+}
+
+/* --- TAREA 7: Header & Menú Hamburguesa --- */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+}
+
+/* Botón Hamburguesa (Estilo base) */
+.navbar__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-main);
+    display: none; /* Oculto en desktop */
+}
+
+/* Enlaces del menú */
+.navbar__link {
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.navbar__link:hover { color: var(--color-primary); }
+
+/* --- TAREA 7: Tags (Etiquetas) --- */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background-color: #FEF3C7; /* Fondo suave */
+    color: #92400E; /* Texto oscuro */
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* --- TAREA 6: Formulario Responsive --- */
+.newsletter-section {
+    background-color: var(--bg-card); /* Blanco */
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #E5E7EB;
+}
+
+.form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form__input, .form__select {
+    min-height: 44px; /* Ley de Fitts */
+    padding: 0 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.5rem;
+    font-family: inherit;
+}
+
+/* Accesibilidad: Focus Visible */
+.form__input:focus, .form__select:focus, button:focus-visible, a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.form__group--checkbox {
+    flex-direction: row;
+    align-items: center;
+}
+
+.form__checkbox {
+    width: 20px; height: 20px;
+    accent-color: var(--color-primary);
+}
+
+.form__btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    min-height: 44px;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.form__btn:hover { background-color: #B45309; }
+
+/* --- TAREA 7: Iconos Sociales --- */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.social-icons a {
+    color: #bdc3c7;
+    transition: color 0.3s, transform 0.3s;
+}
+.social-icons a:hover {
+    color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+/* MOBILE (< 768px): Activar Hamburguesa */
+@media (max-width: 767px) {
+    .navbar__toggle {
+        display: block; /* Mostrar botón */
+    }
+
+    .navbar__collapse {
+        display: none; /* Ocultar menú por defecto */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        flex-direction: column;
+        border-top: 1px solid #eee;
+    }
+
+    /* Clase activada por JS */
+    .navbar__collapse.is-active {
+        display: flex;
+    }
+
+    .navbar__menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    /* Corrección del CSS de tu compañera */
+    .site-header nav ul { display: flex; flex-direction: column; }
+}
+
+/* TABLET/DESKTOP (>= 768px) */
+@media (min-width: 768px) {
+    .navbar__toggle { display: none; }
+    
+    .navbar__collapse {
+        display: block !important; /* Siempre visible */
+        position: static;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .navbar__menu {
+        display: flex;
+        gap: 2rem;
+        margin: 0; padding: 0;
+        list-style: none;
+    }
+    
+    /* Layout Formulario 2 col */
+    .form {
+        grid-template-columns: 1fr 1fr;
+    }
+    .form__group--checkbox, .form__btn {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Contenedor principal para centrarlo y darle aire */
+.paginacion-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0; /* Margen arriba y abajo para separarlo del formulario y footer */
+    padding: 1rem;
+}
+
+/* El navegador flex para alinear los botoncitos */
+.paginacion {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre botones */
+    flex-wrap: wrap; /* Que bajen de línea si la pantalla es muy mini */
+}
+
+/* Estilo base para todos los botones (números, prev, next y puntos) */
+.pag-btn,
+.pag-numero,
+.pag-puntos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Tamaño mínimo para dedos (Ley de Fitts) */
+    min-width: 40px;
+    height: 40px;
+    padding: 0 0.5rem;
+    
+    /* Estilos visuales */
+    background-color: var(--bg-card); /* Blanco */
+    border: 1px solid #D1D5DB; /* Borde gris suave */
+    border-radius: 0.5rem;
+    color: var(--color-text-main);
+    text-decoration: none; /* Quitar subrayado de enlace */
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.pag-btn:not(.disabled):hover,
+.pag-numero:hover:not(.activo) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: #FFF7ED; /* Un tono naranja muy clarito de fondo */
+}
+
+.pag-numero.activo {
+    background-color: var(--color-primary); /* Botón naranja */
+    color: white; /* Texto blanco */
+    border-color: var(--color-primary);
+}
+
+.pag-puntos {
+    border: none; /* Sin borde */
+    background: none;
+    color: #9CA3AF; /* Gris más claro */
+}
+
+.pag-btn.disabled {
+    background-color: #F3F4F6; /* Fondo grisáceo */
+    color: #D1D5DB; /* Texto gris claro */
+    cursor: not-allowed; /* Cursor de prohibido */
+    border-color: #E5E7EB;
+}
